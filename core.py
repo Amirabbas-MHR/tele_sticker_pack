@@ -2,7 +2,7 @@ import requests
 import json
 import os
 import glob
-
+from PIL import Image
 
 
 class S_BOT:
@@ -123,10 +123,15 @@ class S_BOT:
         sticker_list = []
 
         for image_path in image_paths:
-            image_id = self._photo_uploader(image_path, container)
-            sticker_object = {"sticker": image_id, "emoji_list": emojies, "keywords": keywords}
-            sticker_list.append(sticker_object)
-        
+            img = Image.open(image_path)
+            x, y = img.size()
+            if (x>512 or y>512) or (x!=512 and y!=512):
+                raise Exception(ValueError, "Images should have size (512, x) or (x, 512) with x<512")
+            else:
+                image_id = self._photo_uploader(image_path, container)
+                sticker_object = {"sticker": image_id, "emoji_list": emojies, "keywords": keywords}
+                sticker_list.append(sticker_object)
+            img.close()
         return json.dumps(sticker_list)
 
 
