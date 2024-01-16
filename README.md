@@ -14,6 +14,7 @@ To use tele-sticker-pack, you need to have Python installed. Install the require
 ```bash
 pip install requests Pillow
 ```
+then clone this repo into a folder and create a python file in it to 
 
 ## Example Usage
 
@@ -21,11 +22,11 @@ pip install requests Pillow
 from core import S_BOT
 
 # Initialize the bot with your API key
-bot = S_BOT(API_KEY='AAAAAAAAAAAAAA')
+bot = S_BOT(API_KEY='AAAAAAAAAAAAAA') # replace your api key
 
 # Load stickers from a folder and create a sticker pack
-sticker_data = bot.load_stickers(path='sticker_images', container='@mytestcontainer', emojies=['🦕', '🐸'], keywords=['foo', 'bar'])
-bot.createNewStickerSet(user_id=1111111, name='mystickerpack', title='sticker pack title', stickers=sticker_data)
+sticker_data = bot.load_stickers(path='sticker_images', container='@mytestcontainer', emojies=['🦕', '🐸'], keywords=['foo', 'bar']) # replace your container channel 
+bot.createNewStickerSet(user_id=1111111, name='mystickerpack', title='sticker pack title', stickers=sticker_data) # replace your user id
 
 -> will create a sticker pack in link https://t.me/addstickers/mystickerpack_by_{bot.username}
 ```
