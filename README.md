@@ -1,7 +1,7 @@
 # Telegram sticker pack creator
 
 ## Introduction
-tele-sticker-pack is a Python library that allows you to easily create and upload sticker packs to Telegram using the Telegram Bot API. With just a few simple steps, you can transform a collection of images from your local machine into a personalized sticker pack.
+tele-sticker-pack is a small Python project that allows you to easily create and upload sticker packs to Telegram using the Telegram Bot API. With just a few simple steps, you can transform a collection of images from your local machine into a personalized sticker pack.
 
 ## Getting Started
 Before using tele-sticker-pack, make sure to perform the following steps in the Telegram app:
@@ -14,7 +14,7 @@ To use tele-sticker-pack, you need to have Python installed. Install the require
 ```bash
 pip install requests Pillow
 ```
-then clone this repo into a folder and create a python file in it to 
+then clone this repo into a folder and create a python file in it to run the "example use":
 
 ## Example Usage
 
